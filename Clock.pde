@@ -1,6 +1,21 @@
-class Clock {
+class Clock extends Item {
 	// Requirement #2: Complete Clock Class
+Clock(float x,float y){
+ super(x,y); 
+}
 
+void display(){
+ image(clock,x,y,w,h); 
+}
+void checkCollision(Player player){
+  if(player.health < player.PLAYER_MAX_HEALTH
+      && isHit(x, y, w, h, player.x, player.y, player.w, player.h)){
+        addTime(CLOCK_BONUS_SECONDS);
+      isAlive=false;
+       
+        x= y = -1000; 
+}
+}
 	/*
 	Code for Reference:
 
